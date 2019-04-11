@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import ReactFCCtest from 'react-fcctest';
 import parse from 'html-react-parser';
@@ -9,10 +8,6 @@ var marked = require('marked');
 marked.setOptions({
     breaks: true,
 })
-
-//react-markdown init
-// const ReactMarkdown = require('react-markdown')
-// const input = '# This is a header from react-markdown.\n\nAnd this is a paragraph'
 
 class App extends Component {
 
@@ -43,8 +38,6 @@ class App extends Component {
   }
 
   render() {
-    let markDownText = marked('# Marked in browser\n\nRendered by **marked**.');
-
     return (
       <div className="App row">
         <header>
@@ -54,7 +47,6 @@ class App extends Component {
           <textarea className="input-section" id="editor" value={this.state.value} onChange={this.handleChange}
           />
           <div id="preview" className="preview-section">
-          {/*<ReactMarkdown className="preview-section" source={this.state.value} /> */}
           {parse(marked(this.state.value))}
           </div>
         </body>
